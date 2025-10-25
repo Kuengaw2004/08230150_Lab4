@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Learning Journey</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .journey-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 5px solid #6c5ce7;
+            background-color: #f9f9ff;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #2d3436;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        small {
+            color: #636e72;
+        }
+
+        a.button {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #6c5ce7;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        a.button:hover {
+            background-color: #a29bfe;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <header> My Django Learning Journey</header>
+
+    <div class="container">
+        {% for journey in journeys %}
+        <div class="journey-item">
+            <h2>{{ journey.title }}</h2>
+            <p>{{ journey.description }}</p>
+            <small>{{ journey.date }}</small>
+        </div>
+        {% empty %}
+        <p>No learning records found yet. Start adding your learning milestones!</p>
+        {% endfor %}
+
+        <br>
+        <a href="{% url 'aboutMe' %}" class="button">Know More About Me</a>
+    </div>
+
+    <footer>
+        © 2025 Kuenga Wangmo | Built with using Django
+    </footer>
+</body>
+
+</html>
