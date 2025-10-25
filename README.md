@@ -4,8 +4,8 @@ Setup Instructions
 
 1. Clone the repository:
    
-   git clone https://github.com/yourusername/08230193_Lab4.git
-   cd 08230193_Lab4
+   git clone https://github.com/yourusername/08230150_Lab04.git
+   cd 08230150_Lab04
    
 
 2. Install dependencies:
