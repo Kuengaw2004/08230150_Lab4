@@ -19,5 +19,6 @@ from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('kwjourney.urls')),
+    path('',include('kwjourney.urls')), # Include all URLs from your app named 'kwJourney'
+    # This means the app's urls.py will handle requests to the homepage ('')
 ]
